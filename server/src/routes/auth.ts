@@ -5,7 +5,6 @@ import { prisma } from "../lib/prisma";
 
 export async function authRouter(app: FastifyInstance) {
   app.post("/register", async (request) => {
-    await request.jwtVerify()
     const bodySchema = z.object({
       code: z.string(),
     });
@@ -45,7 +44,7 @@ export async function authRouter(app: FastifyInstance) {
         githubId: userInfo.id,
       },
     });
-
+    
     if (!user) {
       user = await prisma.user.create({
         data: {
