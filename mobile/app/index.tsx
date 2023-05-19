@@ -5,8 +5,7 @@ import { makeRedirectUri, useAuthRequest } from 'expo-auth-session'
 import * as SecureStore from 'expo-secure-store'
 
 import NLWLogo from '../src/assets/nlw-spacetime-logo.svg'
-import { api } from '../src/assets/lib/api'
-
+import { api } from '../src/lib/api'
 
 const discovery = {
   authorizationEndpoint: 'https://github.com/login/oauth/authorize',
@@ -18,7 +17,7 @@ const discovery = {
 export default function App() {
   const router = useRouter()
 
-  const [response, signInWithGithub] = useAuthRequest(
+  const [, response, signInWithGithub] = useAuthRequest(
     {
       clientId: 'd26f194cc5d5132a51be',
       scopes: ['identity'],

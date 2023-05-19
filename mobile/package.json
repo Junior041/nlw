@@ -2,7 +2,7 @@
   "name": "mobile",
   "version": "1.0.0",
   "main": "index.js",
-    "scripts": {
+  "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@expo-google-fonts/bai-jamjuree": "^0.2.3",
-    "@expo-google-fonts/inter": "^0.2.3",
     "@expo-google-fonts/roboto": "^0.2.3",
     "@types/react": "~18.0.27",
     "axios": "^1.4.0",
@@ -33,6 +32,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
+    "@rocketseat/eslint-config": "^1.2.0",
+    "eslint": "^8.40.0",
+    "prettier-plugin-tailwindcss": "^0.2.8",
     "react-native-svg-transformer": "^1.0.0",
     "tailwindcss": "^3.3.2"
   },
