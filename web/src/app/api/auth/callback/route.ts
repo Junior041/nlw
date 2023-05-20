@@ -9,10 +9,11 @@ export async function GET(request: NextRequest) {
   });
   const token = registerResponse.data;
   const redirectUrl = new URL('/', request.url)
-  const cookieExpireInSecond = 60*60*24*30
+  const cookieExpiresInSeconds = 60*60*24*30
+  
   return NextResponse.redirect(redirectUrl, {
-    headers:{
-        'Set-Cookie': `token=${token}; Path=/ max-age=${cookieExpireInSecond};`
-    }
+    headers: {
+      'Set-Cookie': `token=${token}; Path=/; max-age=${cookieExpiresInSeconds};`,
+    },
   })
 }
