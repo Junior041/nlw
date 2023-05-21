@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     code,
   });
   const token = registerResponse.data;
-
+  
   const redirectUrl = redirectTo ?? new URL('/', request.url)
 
   const cookieExpiresInSeconds = 60*60*24*30
